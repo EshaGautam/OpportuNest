@@ -11,6 +11,7 @@ import SaveJobs from './pages/save-jobs'
 import { ThemeProvider } from './components/theme-provider'
 import OnBoarding  from './pages/onboarding'
 import ProtectedRoutes from './components/protected-route'
+import JobListing from './pages/job-listings'
 const router = createBrowserRouter([{
   element:<AppLayout/>,
   children:[
@@ -29,7 +30,7 @@ const router = createBrowserRouter([{
       path:'/jobs',
       element:(
       <ProtectedRoutes>
-        <JobsPage/>
+        <JobListing/>
       </ProtectedRoutes>)
     } ,
     {
