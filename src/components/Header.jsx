@@ -31,12 +31,12 @@ const Header = () => {
 
   return (
     <>
-      <nav className="py-4  px-10 flex justify-between items-center">
+      <nav className="py-4 px-10 flex justify-between items-center ">
         <Link to="/">
           <img src="/opportunest-high-resolution-logo-transparent.png" className="h-20" alt="Hirrd Logo" />
         </Link>
 
-        <div className="flex gap-8">
+        <div className="flex gap-8 ">
           <SignedOut>
             <Button variant="outline" onClick={() => setShowSignIn(true)}>
               Login
