@@ -100,7 +100,7 @@ const ApplyJobDrawer = ({user,job,applied=false,fetchJob}) => {
           <Input
             type="text"
             placeholder="Skills (Comma Separated)"
-            className="flex-1"
+            className="flex-1 text-white"
             {...register("skills")}
           />
           {errors.skills && (
@@ -110,7 +110,7 @@ const ApplyJobDrawer = ({user,job,applied=false,fetchJob}) => {
             name="education"
             control={control}
             render={({ field }) => (
-              <RadioGroup onValueChange={field.onChange} {...field}>
+              <RadioGroup onValueChange={field.onChange} {...field} >
                 <div className="flex items-center space-x-2">
                   <RadioGroupItem value="Intermediate" id="intermediate" />
                   <Label htmlFor="intermediate">Intermediate</Label>

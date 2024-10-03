@@ -12,15 +12,18 @@ const MyJobs = () => {
   }
   return (
     <div>
-      <h1 className="flex flex-col items-center justify-center gradient-title text-4xl font-extrabold sm:text-6xl lg:text-8xl tracking-tighter py-4">
+      <h1 className="flex flex-col items-center justify-center gradient-title text-3xl font-extrabold sm:text-6xl lg:text-6xl tracking-tighter py-4 mb-14">
         {user?.unsafeMetadata?.role === "candidate"
           ? "My Applications"
           : "My Jobs"}
       </h1>
+      <div className="px-20">
       {user?.unsafeMetadata?.role === "candidate"
           ? <CreatedApplication/>
           : 
           <CreatedJob/>}
+      </div>
+     
     </div>
   );
 };

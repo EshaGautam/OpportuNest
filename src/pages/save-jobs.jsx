@@ -18,7 +18,7 @@ const SavedJobs = () => {
     if (isLoaded) {
       fnSavedJobs();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [isLoaded]);
 
   if (!isLoaded || loadingSavedJobs) {
@@ -26,13 +26,13 @@ const SavedJobs = () => {
   }
 
   return (
-    <div>
+    <div className="px-20">
       <h1 className="gradient-title font-extrabold text-6xl sm:text-7xl text-center pb-8">
         Saved Jobs
       </h1>
 
       {loadingSavedJobs === false && (
-        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {savedJobs?.length ? (
             savedJobs?.map((saved) => {
               return (

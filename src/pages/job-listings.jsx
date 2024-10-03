@@ -73,8 +73,8 @@ const JobListing = () => {
   }
 
   return (
-    <div className="">
-      <h1 className="gradient-title font-extrabold text-6xl sm:text-7xl text-center pb-8">
+    <div className="px-20">
+      <h1 className="gradient-title font-extrabold text-6xl sm:text-7xl text-center pb-8 mb-10">
         Latest Jobs
       </h1>
       <form
@@ -85,20 +85,20 @@ const JobListing = () => {
           type="text"
           placeholder="Search Jobs by Title.."
           name="search-query"
-          className="h-full flex-1  px-4 text-md"
+          className="h-full flex-1  px-4 text-md card-gradient text-gray-800"
         />
-        <Button type="submit" className="h-full sm:w-28" variant="blue">
+        <Button type="submit" className="h-full sm:w-28 bg-teal-700 text-white" >
           Search
         </Button>
       </form>
 
       <div className="flex flex-col sm:flex-row gap-2">
-        <Select value={location} onValueChange={(value) => setLocation(value)}>
+        <Select value={location} onValueChange={(value) => setLocation(value) } className='card-gradient'>
           <SelectTrigger>
             <SelectValue placeholder="Filter by Location" />
           </SelectTrigger>
           <SelectContent>
-            <SelectGroup>
+            <SelectGroup >
               {State.getStatesOfCountry("IN").map(({ name }) => {
                 return (
                   <SelectItem key={name} value={name}>
@@ -113,6 +113,7 @@ const JobListing = () => {
         <Select
           value={company_id}
           onValueChange={(value) => setCompany_id(value)}
+      
         >
           <SelectTrigger>
             <SelectValue placeholder="Filter by Company" />
@@ -143,7 +144,7 @@ const JobListing = () => {
       )}
 
       {loadingJobs === false && (
-        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {jobs?.length ? (
             jobs.map((job) => {
               return (

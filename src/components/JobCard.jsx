@@ -93,8 +93,8 @@ const JobCard = ({
         </Link>
         {!isMyJob && (
           <Button
-            variant="outline"
-            className="w-15"
+            // variant="outline"
+            className="w-15 border"
             onClick={handleSaveJob}
             disabled={loadingSavedJob}
           >

@@ -59,7 +59,7 @@ const LandingPage = () => {
 
     <img src='/banner (1).jpeg' className='w-full px-10'/>
     <section className="grid grid-cols-1 md:grid-cols-2 gap-4 px-10">
-        <Card>
+        <Card >
           <CardHeader>
             <CardTitle className="font-extrabold">For Job Seekers</CardTitle>
           </CardHeader>
