@@ -5,12 +5,12 @@ const AppLayout = () => {
   return (
   <div >
     <div className='grid-background'></div>
-    <main className='min-h-screen  container'>
+    <main className='min-h-screen  container '>
         <Header/>
         <Outlet/>
     </main>
-    <div className="p-10 text-center bg-gray-800 mt-10">
-        Opportunest....
+    <div className="p-10 text-center bg-[#009688] mt-28">
+       Connecting Talents To Opportunity......
       </div>
   </div>
   )

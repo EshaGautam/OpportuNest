@@ -14,7 +14,7 @@ import {
 import FAQ from '../data/faqs.json'
 const LandingPage = () => {
   return (
-    <main className='flex flex-col gap-10 sm:gap-20 py-10 sm:py-20'>
+    <main className='flex flex-col gap-10 sm:gap-20 py-10 sm:py-20 mt-10'>
       <section className='text-center'>
         <h1 className='flex flex-col items-center justify-center gradient-title text-4xl font-extrabold sm:text-6xl lg:text-8xl tracking-tighter py-4'>Be An Opportunist!! Find Your Dream Job</h1>
         <p className="text-gray-300 sm:mt-4 text-xs sm:text-xl">

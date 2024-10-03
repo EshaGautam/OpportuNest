@@ -46,7 +46,7 @@ const JobsPage = () => {
 
 
   return (
-    <div className='flex flex-col gap-8 px-10'>
+    <div className='flex flex-col gap-8 px-10 mt-20'>
       <div className='flex flex-col-reverse gap-6 md:flex-row justify-between items-center'>
         <h1 className='gradient-title font-extrabold pb-3 text-4xl sm:text-6xl'>{job?.title}</h1>
         <img src={job?.company?.logo_url} className='h-12' alt={job?.title}/>
