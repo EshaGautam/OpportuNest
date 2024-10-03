@@ -9,43 +9,59 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Link } from "react-router-dom";
-import useFetch from "../hooks/useFetch";
-import { saveJobs } from "@/api/apiJobs";
+import useFetch from "@/hooks/useFetch";
+import { deleteJob, saveJob } from "@/api/apiJobs";
 import { useUser } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 import { BarLoader } from "react-spinners";
 
 const JobCard = ({
   job,
-  saveInit,
+  savedInit=false,
   onJobAction = () => {},
   isMyJob = false,
 }) => {
-  const [saved, setSaved] = useState(saveInit);
+  const [saved, setSaved] = useState(savedInit);
+
   const { user } = useUser();
+
+  const { loading: loadingDeleteJob, fn: fnDeleteJob } = useFetch(deleteJob, {
+    job_id: job.id,
+  });
 
   const {
     loading: loadingSavedJob,
     data: savedJob,
     fn: fnSavedJob,
-  } = useFetch(saveJobs,{alreadySaved:saved});
+  } = useFetch(saveJob,{alreadySaved:saved});
 
   const handleSaveJob = async () => {
     await fnSavedJob({
       user_id: user.id,
       job_id: job.id,
-    });
+    },{alreadySaved:saved})
     onJobAction();
   };
-  
+
+  const handleDeleteJob = async () => {
+    await fnDeleteJob();
+    onJobAction();
+  };
 
   useEffect(() => {
-    if (savedJob !== undefined) setSaved(savedJob?.length > 0);
+    {
+      if(savedJob?.length !== 0){
+        setSaved(savedJob)
+      }
+      
+    }
   }, [savedJob]);
 
   return (
     <Card className="flex flex-col">
-     
+      {loadingDeleteJob && (
+        <BarLoader className="mt-4" width={"100%"} color="#36d7b7" />
+      )}
       <CardHeader className="flex">
         <CardTitle className="flex justify-between font-bold">
           {job.title}

@@ -142,7 +142,7 @@ const ApplyJobDrawer = ({user,job,applied=false,fetchJob}) => {
             <p className="text-red-500">{errorApply?.message}</p>
           )}
           {loadingApply && <BarLoader width={"100%"} color="#36d7b7" />}
-          <Button type="submit" variant="blue" size="lg">
+          <Button type="submit" variant="blue" size="lg" >
             Apply
           </Button>
         </form>

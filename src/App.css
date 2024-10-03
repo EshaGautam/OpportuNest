@@ -24,10 +24,3 @@
   height: 100%;
   background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.9));
 }
-
-.glass-effect {
-  background: rgba(200, 255, 255, 0.2); /* Semi-transparent white */
-  backdrop-filter: blur(7px); /* Apply blur effect */
-
- 
-}

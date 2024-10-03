@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import JobsPage from './pages/jobs'
 import MyJobs from './pages/my-jobs'
 import PostJobs from './pages/post-jobs'
-import SaveJobs from './pages/save-jobs'
+import SavedJobs from './pages/save-jobs'
 import { ThemeProvider } from './components/theme-provider'
 import OnBoarding  from './pages/onboarding'
 import ProtectedRoutes from './components/protected-route'
@@ -51,7 +51,7 @@ const router = createBrowserRouter([{
       path:'/saved-jobs',
       element:(
       <ProtectedRoutes>
-       <SaveJobs/>
+       <SavedJobs/>
       </ProtectedRoutes>)
     },
     {

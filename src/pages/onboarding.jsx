@@ -9,7 +9,7 @@ const OnBoarding = () => {
   const navigate = useNavigate();
 
   const navigateUser = (role) => {
-    const route = role === 'recruiter' ? '/post-jobs' : '/jobs';
+    const route = role === '/recruiter' ? '/post-jobs' : '/jobs';
     navigate(route);
   };
 
@@ -24,7 +24,6 @@ const OnBoarding = () => {
 
   useEffect(() => {
     if (isLoaded && user?.unsafeMetadata?.role) {
-      // Navigate only if the role is set and has changed
       navigateUser(user.unsafeMetadata.role);
     }
   }, [isLoaded, user?.unsafeMetadata?.role, navigate]);
